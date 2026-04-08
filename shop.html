@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boutique — Tasty Crousty</title>
+  <meta name="description" content="Découvrez la collection Tasty Crousty — caleçons, culottes et maillots de bain personnalisés.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍪</text></svg>">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-main">TASTY CROUSTY</span>
+        <span class="logo-sub">L'île de la Skibiditentation</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="shop.html">Boutique</a>
+        <a href="about.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-btn">
+          🛒
+          <span class="cart-count" style="display:none">0</span>
+        </a>
+        <a href="shop.html" class="btn btn-primary btn-sm" style="display:none;display:flex" id="navShopBtn">Découvrir</a>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-menu-close" id="mobileClose">✕</span>
+  <a href="index.html">Accueil</a>
+  <a href="shop.html">Boutique</a>
+  <a href="about.html">À propos</a>
+  <a href="contact.html">Contact</a>
+  <a href="cart.html">Panier 🛒</a>
+</div>
+
+
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="container">
+    <span class="tag fade-up" style="margin-bottom:16px;display:inline-block">🛍️ La boutique</span>
+    <h1 class="fade-up fade-up-delay-1">BOUTIQUE <span class="text-gradient">TASTY CROUSTY</span></h1>
+    <p class="fade-up fade-up-delay-2">Collection personnalisée de sous-vêtements & maillots de bain. Visuels à venir très prochainement.</p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="shop-filters">
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all">Tout voir</button>
+      <button class="filter-tab" data-filter="calecon">Caleçons</button>
+      <button class="filter-tab" data-filter="culotte">Culottes</button>
+      <button class="filter-tab" data-filter="maillot">Maillots de bain</button>
+    </div>
+    <select class="sort-select">
+      <option>Trier par : Nouveautés</option>
+      <option>Prix croissant</option>
+      <option>Prix décroissant</option>
+      <option>Popularité</option>
+    </select>
+  </div>
+</div>
+
+<!-- CALEÇONS -->
+<section class="category-section">
+  <div class="container">
+    <div class="category-header fade-up">
+      <h2>🩲 Caleçons</h2>
+      <a href="#" class="btn btn-secondary btn-sm">Voir tout</a>
+    </div>
+    <div class="products-grid">
+      <div class="product-card fade-up" data-category="calecon">
+        <div class="product-img">
+          <div class="placeholder-img"><span class="ph-emoji">🩲</span><span>VISUEL À VENIR</span></div>
+          <div class="card-badge"><span class="badge badge-soon">Bientôt</span></div>
+        </div>
+        <div class="card-body">
+          <div class="card-category">Caleçon</div>
+          <div class="card-name">Caleçon Tasty Crousty #01</div>
+          <p style="font-size:13px;color:var(--gray)">Design signature croustillant.</p>
+          <div class="card-footer"><span class="card-price placeholder">— €</span><a href="product.html" class="btn btn-dark btn-sm">Voir →</a></div>
+        </div>
+      </div>
+      <div class="product-card fade-up fade-up-delay-1" data-category="calecon">
+        <div class="product-img">
+          <div class="placeholder-img"><span class="ph-emoji">🩲</span><span>VISUEL À VENIR</span></div>
+          <div class="card-badge"><span class="badge badge-soon">Bientôt</span></div>
+        </div>
+        <div class="card-body">
+          <div class="card-category">Caleçon</div>
+          <div class="card-name">Caleçon Skibidi Edition</div>
+          <p style="font-size:13px;color:var(--gray)">Exclusif L'île de la Skibiditentation.</p>
+          <div class="card-footer"><span class="card-price placeholder">— €</span><a href="product.html" class="btn btn-dark btn-sm">Voir →</a></div>
+        </div>
+      </div>
+      <div class="product-card fade-up fade-up-delay-2" data-category="calecon">
+        <div class="product-img">
+          <div class="placeholder-img"><span class="ph-emoji">🩲</span><span>VISUEL À VENIR</span></div>
+          <div class="card-badge"><span class="badge badge-soon">Bientôt</span></div>
+        </div>
+        <div class="card-body">
+          <div class="card-category">Caleçon</div>
+          <div class="card-name">Caleçon Tropical Vibes</div>
+          <p style="font-size:13px;color:var(--gray)">L'été en toute liberté.</p>
+          <div class="card-footer"><span class="card-price placeholder">— €</span><a href="product.html" class="btn btn-dark btn-sm">Voir →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CULOTTES -->
+<section class="category-section" style="padding-top:0">
+  <div class="container">
+    <div class="category-header fade-up">
+      <h2>👙 Culottes</h2>
+      <a href="#" class="btn btn-secondary btn-sm">Voir tout</a>
+    </div>
+    <div class="products-grid">
+      <div class="product-card fade-up" data-category="culotte">
+        <div class="product-img">
+          <div class="placeholder-img"><span class="ph-emoji">👙</span><span>VISUEL À VENIR</span></div>
+          <div class="card-badge"><span class="badge badge-soon">Bientôt</span></div>
+        </div>
+        <div class="card-body">
+          <div class="card-category">Culotte</div>
+          <div class="card-name">Culotte Tasty Crousty #01</div>
+          <p style="font-size:13px;color:var(--gray)">Confort et style, version girly.</p>
+          <div class="card-footer"><span class="card-price placeholder">— €</span><a href="product.html" class="btn btn-dark btn-sm">Voir →</a></div>
+        </div>
+      </div>
+      <div class="product-card fade-up fade-up-delay-1" data-category="culotte">
+        <div class="product-img">
+          <div class="placeholder-img"><span class="ph-emoji">👙</span><span>VISUEL À VENIR</span></div>
+          <div class="card-badge"><span class="badge badge-soon">Bientôt</span></div>
+        </div>
+        <div class="card-body">
+          <div class="card-category">Culotte</div>
+          <div class="card-name">Culotte Skibidi Collection</div>
+          <p style="font-size:13px;color:var(--gray)">L'île de la Skibiditentation, en douceur.</p>
+          <div class="card-footer"><span class="card-price placeholder">— €</span><a href="product.html" class="btn btn-dark btn-sm">Voir →</a></div>
+        </div>
+      </div>
+      <div class="product-card fade-up fade-up-delay-2" data-category="culotte">
+        <div class="product-img">
+          <div class="placeholder-img"><span class="ph-emoji">👙</span><span>VISUEL À VENIR</span></div>
+          <div class="card-badge"><span class="badge badge-soon">Bientôt</span></div>
+        </div>
+        <div class="card-body">
+          <div class="card-category">Culotte</div>
+          <div class="card-name">Culotte Cotton Candy</div>
+          <p style="font-size:13px;color:var(--gray)">Douce comme du coton, forte comme une icône.</p>
+          <div class="card-footer"><span class="card-price placeholder">— €</span><a href="product.html" class="btn btn-dark btn-sm">Voir →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAILLOTS DE BAIN -->
+<section class="category-section" style="padding-top:0">
+  <div class="container">
+    <div class="category-header fade-up">
+      <h2>🩱 Maillots de bain</h2>
+      <a href="#" class="btn btn-secondary btn-sm">Voir tout</a>
+    </div>
+    <div class="products-grid">
+      <div class="product-card fade-up" data-category="maillot">
+        <div class="product-img">
+          <div class="placeholder-img"><span class="ph-emoji">🩱</span><span>VISUEL À VENIR</span></div>
+          <div class="card-badge"><span class="badge badge-soon">Bientôt</span></div>
+        </div>
+        <div class="card-body">
+          <div class="card-category">Maillot de bain</div>
+          <div class="card-name">Short de bain Tasty #01</div>
+          <p style="font-size:13px;color:var(--gray)">La plage version Tasty Crousty.</p>
+          <div class="card-footer"><span class="card-price placeholder">— €</span><a href="product.html" class="btn btn-dark btn-sm">Voir →</a></div>
+        </div>
+      </div>
+      <div class="product-card fade-up fade-up-delay-1" data-category="maillot">
+        <div class="product-img">
+          <div class="placeholder-img"><span class="ph-emoji">🩱</span><span>VISUEL À VENIR</span></div>
+          <div class="card-badge"><span class="badge badge-soon">Bientôt</span></div>
+        </div>
+        <div class="card-body">
+          <div class="card-category">Maillot de bain</div>
+          <div class="card-name">Maillot Tropical Skibidi</div>
+          <p style="font-size:13px;color:var(--gray)">Exclusif île de la Skibiditentation, summer edition.</p>
+          <div class="card-footer"><span class="card-price placeholder">— €</span><a href="product.html" class="btn btn-dark btn-sm">Voir →</a></div>
+        </div>
+      </div>
+      <div class="product-card fade-up fade-up-delay-2" data-category="maillot">
+        <div class="product-img">
+          <div class="placeholder-img"><span class="ph-emoji">🩱</span><span>VISUEL À VENIR</span></div>
+          <div class="card-badge"><span class="badge badge-soon">Bientôt</span></div>
+        </div>
+        <div class="card-body">
+          <div class="card-category">Maillot de bain</div>
+          <div class="card-name">Bikini Crousty Wave</div>
+          <p style="font-size:13px;color:var(--gray)">Pour les queens de la vague.</p>
+          <div class="card-footer"><span class="card-price placeholder">— €</span><a href="product.html" class="btn btn-dark btn-sm">Voir →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMING SOON BANNER -->
+<section class="section-sm">
+  <div class="container">
+    <div style="background:var(--dark2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:48px;text-align:center" class="fade-up">
+      <h3 style="font-family:var(--font-display);font-size:32px;letter-spacing:1px;margin-bottom:12px">⏳ PLUS DE PRODUITS BIENTÔT</h3>
+      <p style="color:var(--gray);margin-bottom:24px">Inscris-toi pour être notifié(e) dès que les nouveaux produits arrivent.</p>
+      <form id="newsletterForm" class="newsletter-form" style="justify-content:center">
+        <input type="email" placeholder="ton@email.com" class="newsletter-input" required>
+        <button type="submit" class="btn btn-primary">Me notifier 🔔</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-main">TASTY CROUSTY</span>
+          <span class="logo-sub">L'île de la Skibiditentation</span>
+        </a>
+        <p>La marque de sous-vêtements et maillots de bain nés de l'univers créatif Tasty Crousty.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">📸</a>
+          <a href="#" class="social-link">🎵</a>
+          <a href="#" class="social-link">🐦</a>
+          <a href="#" class="social-link">▶️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Boutique</h5>
+        <ul>
+          <li><a href="shop.html">Tous les produits</a></li>
+          <li><a href="shop.html">Caleçons</a></li>
+          <li><a href="shop.html">Culottes</a></li>
+          <li><a href="shop.html">Maillots de bain</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Marque</h5>
+        <ul>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="contact.html">Collaborations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Légal</h5>
+        <ul>
+          <li><a href="cgv.html">CGV</a></li>
+          <li><a href="remboursement.html">Remboursements</a></li>
+          <li><a href="confidentialite.html">Confidentialité</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Tasty Crousty. Tous droits réservés.</p>
+      <div class="footer-legal">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="cgv.html">CGV</a>
+        <a href="remboursement.html">Remboursement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
