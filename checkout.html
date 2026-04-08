@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commande — Tasty Crousty</title>
+  <meta name="description" content="Finaliser votre commande Tasty Crousty — paiement sécurisé via Stripe.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍪</text></svg>">
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-main">TASTY CROUSTY</span>
+        <span class="logo-sub">L'île de la Skibiditentation</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="shop.html">Boutique</a>
+        <a href="about.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="cart.html" class="cart-btn">
+          🛒
+          <span class="cart-count" style="display:none">0</span>
+        </a>
+        <a href="shop.html" class="btn btn-primary btn-sm" style="display:none;display:flex" id="navShopBtn">Découvrir</a>
+        <div class="hamburger" id="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <span class="mobile-menu-close" id="mobileClose">✕</span>
+  <a href="index.html">Accueil</a>
+  <a href="shop.html">Boutique</a>
+  <a href="about.html">À propos</a>
+  <a href="contact.html">Contact</a>
+  <a href="cart.html">Panier 🛒</a>
+</div>
+
+
+<section class="checkout-page">
+  <div class="container">
+    <h1 class="fade-up" style="font-family:var(--font-display);font-size:48px;letter-spacing:1px;margin-bottom:40px">COMMANDE</h1>
+
+    <!-- STEPS -->
+    <div class="checkout-steps fade-up">
+      <div class="checkout-step active">
+        <div class="step-num">1</div>
+        <span class="step-name">Livraison</span>
+      </div>
+      <div class="checkout-step">
+        <div class="step-num">2</div>
+        <span class="step-name">Paiement</span>
+      </div>
+      <div class="checkout-step">
+        <div class="step-num">3</div>
+        <span class="step-name">Confirmation</span>
+      </div>
+    </div>
+
+    <div class="checkout-layout">
+      <div>
+        <!-- INFOS LIVRAISON -->
+        <div class="checkout-section fade-up">
+          <h3>📦 Informations de livraison</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Prénom *</label>
+              <input type="text" class="form-control" placeholder="Prénom" required>
+            </div>
+            <div class="form-group">
+              <label>Nom *</label>
+              <input type="text" class="form-control" placeholder="Nom" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" class="form-control" placeholder="ton@email.com" required>
+          </div>
+          <div class="form-group">
+            <label>Téléphone</label>
+            <input type="tel" class="form-control" placeholder="+33 6 XX XX XX XX">
+          </div>
+          <div class="form-group">
+            <label>Adresse *</label>
+            <input type="text" class="form-control" placeholder="Numéro et rue" required>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Ville *</label>
+              <input type="text" class="form-control" placeholder="Ville" required>
+            </div>
+            <div class="form-group">
+              <label>Code postal *</label>
+              <input type="text" class="form-control" placeholder="75001" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Pays *</label>
+            <select class="form-control form-select" required>
+              <option>France</option>
+              <option>Belgique</option>
+              <option>Suisse</option>
+              <option>Luxembourg</option>
+              <option>Canada</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- MODE LIVRAISON -->
+        <div class="checkout-section fade-up">
+          <h3>🚚 Mode de livraison</h3>
+          <div class="payment-methods">
+            <div class="payment-method active" onclick="selectShipping(this)">
+              <span class="pm-icon">📦</span>
+              <div>
+                <div class="pm-name">Livraison standard</div>
+                <div class="pm-desc">5-7 jours ouvrés</div>
+              </div>
+              <span style="margin-left:auto;font-weight:700">4.99€</span>
+            </div>
+            <div class="payment-method" onclick="selectShipping(this)">
+              <span class="pm-icon">⚡</span>
+              <div>
+                <div class="pm-name">Livraison express</div>
+                <div class="pm-desc">2-3 jours ouvrés</div>
+              </div>
+              <span style="margin-left:auto;font-weight:700">9.99€</span>
+            </div>
+            <div class="payment-method" onclick="selectShipping(this)">
+              <span class="pm-icon">🚀</span>
+              <div>
+                <div class="pm-name">Livraison gratuite</div>
+                <div class="pm-desc">5-7 jours · Dès 60€ d'achat</div>
+              </div>
+              <span style="margin-left:auto;font-weight:700;color:var(--primary)">GRATUIT</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAIEMENT -->
+        <div class="checkout-section fade-up">
+          <h3>🔒 Paiement sécurisé</h3>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:20px;padding:12px;background:rgba(255,45,85,0.06);border-radius:var(--radius-sm)">
+            <span>🛡️</span>
+            <span style="font-size:13px;color:var(--gray)">Toutes les transactions sont sécurisées et chiffrées via <strong style="color:white">Stripe</strong>.</span>
+          </div>
+          <div class="payment-methods">
+            <div class="payment-method active" onclick="selectPayment(this)">
+              <span class="pm-icon">💳</span>
+              <div>
+                <div class="pm-name">Carte bancaire</div>
+                <div class="pm-desc">Visa, Mastercard, American Express</div>
+              </div>
+            </div>
+            <div class="payment-method" onclick="selectPayment(this)">
+              <span class="pm-icon">🍎</span>
+              <div>
+                <div class="pm-name">Apple Pay</div>
+                <div class="pm-desc">Paiement rapide et sécurisé</div>
+              </div>
+            </div>
+            <div class="payment-method" onclick="selectPayment(this)">
+              <span class="pm-icon">🔵</span>
+              <div>
+                <div class="pm-name">Google Pay</div>
+                <div class="pm-desc">Paiement rapide et sécurisé</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- STRIPE CARD FIELDS -->
+          <div id="cardFields" style="margin-top:20px">
+            <div class="form-group">
+              <label>Numéro de carte</label>
+              <input type="text" class="form-control" placeholder="1234 5678 9012 3456" maxlength="19">
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label>Date d'expiration</label>
+                <input type="text" class="form-control" placeholder="MM/AA" maxlength="5">
+              </div>
+              <div class="form-group">
+                <label>CVV</label>
+                <input type="text" class="form-control" placeholder="123" maxlength="4">
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Nom sur la carte</label>
+              <input type="text" class="form-control" placeholder="NOM PRÉNOM">
+            </div>
+          </div>
+
+          <div style="margin:20px 0;display:flex;align-items:center;gap:8px">
+            <input type="checkbox" id="cgvCheck" style="accent-color:var(--primary)">
+            <label for="cgvCheck" style="font-size:13px;color:var(--gray)">
+              J'accepte les <a href="cgv.html" style="color:var(--primary)">conditions générales de vente</a> et la <a href="confidentialite.html" style="color:var(--primary)">politique de confidentialité</a>.
+            </label>
+          </div>
+
+          <button onclick="submitOrder()" class="btn btn-primary" style="width:100%;justify-content:center;font-size:16px;padding:18px">
+            🔒 Confirmer la commande
+          </button>
+          <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px">
+            <span class="stripe-badge">🔒 Propulsé par Stripe</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RÉCAP COMMANDE -->
+      <div class="fade-up fade-up-delay-1">
+        <div class="cart-summary">
+          <h3>Récapitulatif de la commande</h3>
+          <div id="orderItems" class="order-summary-mini"></div>
+          <div class="summary-line">
+            <span>Sous-total</span>
+            <span id="co-subtotal">0.00€</span>
+          </div>
+          <div class="summary-line">
+            <span>Livraison</span>
+            <span id="co-shipping">4.99€</span>
+          </div>
+          <div class="summary-line total">
+            <span>Total TTC</span>
+            <span id="co-total">0.00€</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function selectShipping(el) {
+  document.querySelectorAll('.checkout-section:nth-child(2) .payment-method').forEach(m => m.classList.remove('active'));
+  el.classList.add('active');
+}
+function selectPayment(el) {
+  document.querySelectorAll('.checkout-section:nth-child(3) .payment-method').forEach(m => m.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('cardFields').style.display = el.querySelector('.pm-name').textContent === 'Carte bancaire' ? 'block' : 'none';
+}
+function submitOrder() {
+  const cgv = document.getElementById('cgvCheck');
+  if (!cgv.checked) { showToast('⚠️ Veuillez accepter les CGV pour continuer'); return; }
+  showToast('✅ Commande confirmée ! Tu recevras un email de confirmation.');
+  setTimeout(() => {
+    localStorage.removeItem('tc_cart');
+    window.location.href = 'index.html';
+  }, 3000);
+}
+// Populate order summary from cart
+document.addEventListener('DOMContentLoaded', () => {
+  const c = JSON.parse(localStorage.getItem('tc_cart') || '[]');
+  const container = document.getElementById('orderItems');
+  if (container) {
+    container.innerHTML = c.map(item => `
+      <div class="osi">
+        <div class="osi-img">${item.emoji || '👕'}</div>
+        <div><div class="osi-name">${item.name}</div><div class="osi-meta">Taille: ${item.size} · Qté: ${item.qty}</div></div>
+        <div class="osi-price">${((item.price || 0) * item.qty).toFixed(2)}€</div>
+      </div>
+    `).join('') || '<p style="color:var(--gray);font-size:14px">Panier vide</p>';
+    const sub = c.reduce((s, i) => s + (i.price || 0) * i.qty, 0);
+    const ship = sub >= 60 ? 0 : 4.99;
+    document.getElementById('co-subtotal').textContent = sub.toFixed(2) + '€';
+    document.getElementById('co-shipping').textContent = ship === 0 ? 'GRATUIT' : ship.toFixed(2) + '€';
+    document.getElementById('co-total').textContent = (sub + ship).toFixed(2) + '€';
+  }
+});
+</script>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <span class="logo-main">TASTY CROUSTY</span>
+          <span class="logo-sub">L'île de la Skibiditentation</span>
+        </a>
+        <p>La marque de sous-vêtements et maillots de bain nés de l'univers créatif Tasty Crousty.</p>
+        <div class="social-links">
+          <a href="#" class="social-link">📸</a>
+          <a href="#" class="social-link">🎵</a>
+          <a href="#" class="social-link">🐦</a>
+          <a href="#" class="social-link">▶️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Boutique</h5>
+        <ul>
+          <li><a href="shop.html">Tous les produits</a></li>
+          <li><a href="shop.html">Caleçons</a></li>
+          <li><a href="shop.html">Culottes</a></li>
+          <li><a href="shop.html">Maillots de bain</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Marque</h5>
+        <ul>
+          <li><a href="about.html">À propos</a></li>
+          <li><a href="contact.html">Collaborations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Légal</h5>
+        <ul>
+          <li><a href="cgv.html">CGV</a></li>
+          <li><a href="remboursement.html">Remboursements</a></li>
+          <li><a href="confidentialite.html">Confidentialité</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Tasty Crousty. Tous droits réservés.</p>
+      <div class="footer-legal">
+        <a href="mentions-legales.html">Mentions légales</a>
+        <a href="confidentialite.html">Confidentialité</a>
+        <a href="cgv.html">CGV</a>
+        <a href="remboursement.html">Remboursement</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
